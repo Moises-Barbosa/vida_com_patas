@@ -1,0 +1,41 @@
+body {
+  background-color: antiquewhite;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "section_sobre"
+    "section_adote"
+    "section_doe"
+    "footer";
+}
+/* main > header,
+.section_sobre,
+.section_adote,
+.section_doe,
+footer {
+} */
+.header {
+  grid-area: header;
+  background-color: blueviolet;
+  height: 10vh;
+}
+.section_sobre {
+  grid-area: section_sobre;
+  background-color: rgb(71, 26, 114);
+  height: 40vh;
+}
+.section_adote {
+  grid-area: section_adote;
+  background-color: rgb(133, 95, 168);
+  height: 40vh;
+}
+.section_doe {
+  grid-area: section_doe;
+  background-color: rgb(76, 43, 226);
+  height: 40vh;
+}
+.footer {
+  grid-area: footer;
+  background-color: rgb(43, 226, 141);
+  height: 10vh;
+}
