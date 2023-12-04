@@ -51,8 +51,9 @@ a {
 a:hover {
   cursor: pointer;
   transition: 1s;
-  color: rgb(18, 16, 146);
-  border: 1px solid rgb(18, 16, 146);
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
   border-radius: 3vw;
   font-size: 23px;
 }
@@ -122,7 +123,6 @@ header input {
   font-size: 20px;
   text-align: justify;
   line-height: 1.2;
-  margin-bottom: ;
 }
 
 .bnt {
@@ -154,8 +154,6 @@ header input {
   transition: 1s;
   background-color: #000;
   color: rgb(245, 245, 219);
-  padding: 10px 23px 10px 23px;
-  font-size: 20px;
 }
 
 .logo {
