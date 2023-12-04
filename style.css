@@ -122,6 +122,7 @@ header input {
   font-weight: 400;
   font-size: 20px;
   text-align: justify;
+
   line-height: 1.2;
 }
 
@@ -168,9 +169,63 @@ header input {
 }
 .section_fazemos {
   grid-area: section_fazemos;
-  /* background-color: rgb(133, 95, 168); */
-  height: 40vh;
+  background-color: rgb(135, 206, 250, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  font-size: 18px;
+  height: 100%;
+  line-height: 1.2;
+  padding-bottom: 15px;
 }
+.section_fazemos section {
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 15px;
+  width: 20vw;
+}
+
+.section_fazemos h4 {
+  font-family: "Petrona", serif;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 5px 0 5px;
+}
+
+.resgate,
+.cuidados,
+.reabilitacao,
+.adocao {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.fazemo {
+  font-family: "Petrona", serif;
+  font-weight: 600;
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.section_fazemos div {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+
+.section_fazemos section figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section_fazemos section figure img {
+  height: 200px;
+}
+
 .section_adote {
   grid-area: section_adote;
   /* background-color: rgb(76, 43, 226); */
