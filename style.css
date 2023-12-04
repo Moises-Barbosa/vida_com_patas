@@ -6,6 +6,7 @@ main {
     "section_somos"
     "section_fazemos"
     "section_adote"
+    "section_form"
     "footer";
   font-family: "Comfortaa", sans-serif;
   font-weight: 400;
@@ -233,8 +234,9 @@ header input {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px 0 15px 0;
+  margin: 15px 0 15px 0;
   text-align: center;
+  padding-bottom: 15px;
 }
 
 .section_adote header {
@@ -282,8 +284,107 @@ h5 {
   padding-top: 15px;
 }
 
+.section_adote {
+  margin-bottom: 0;
+}
+
+.section_form {
+  grid-area: section_form;
+  background-color: rgb(255, 182, 193, 0.95);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.section_form header {
+  text-align: center;
+  margin: 15px 0 15px 0;
+  font-size: 20px;
+}
+
+.section_form header h3 {
+  font-family: "Petrona", serif;
+  font-size: 45px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.section_form form {
+  display: grid;
+  grid-template-areas:
+    "nome email"
+    "textarea textarea"
+    "enviar enviar";
+  width: 60vw;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.nome {
+  grid-area: nome;
+  width: 30vw;
+}
+
+.nome input {
+  width: 28vw;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.email {
+  grid-area: email;
+  width: 30vw;
+}
+
+.email input {
+  width: 28vw;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.textarea {
+  grid-area: textarea;
+  width: 60vw;
+}
+
+.textarea textarea {
+  width: 60vw;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+#enviar {
+  grid-area: enviar;
+  width: 60vw;
+
+  padding: 5px;
+  border-radius: 15px;
+  border: 1px solid #000;
+  background-color: rgb(245, 245, 219);
+  font-size: 15px;
+  transition: 1s;
+}
+
+#enviar:hover {
+  cursor: pointer;
+  transition: 1s;
+  background-color: #000;
+  color: rgb(245, 245, 219);
+  font-size: 18px;
+}
+
 .footer {
   grid-area: footer;
-  /* background-color: rgb(43, 226, 141); */
+  background-color: rgb(245, 245, 219, 0.95);
   height: 10vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

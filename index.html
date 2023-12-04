@@ -171,7 +171,36 @@
         </div>
       </section>
       <!--section_adote-->
-      <footer class="footer"></footer>
+      <section class="section_form">
+        <header>
+          <h3>Formulário de adoção</h3>
+          <p>Preencha esse formulário e aguarde o contato.</p>
+        </header>
+        <form>
+          <div class="nome">
+            <label for="txt_name">Name:</label>
+            <input type="text" id="txt_name" placeholder="Seu nome" required />
+          </div>
+          <div class="email">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Seu email" required />
+          </div>
+          <div class="textarea">
+            <label for="txt_decricao">Decrição:</label>
+            <textarea
+              id="txt_decricao"
+              cols="30"
+              rows="10"
+              placeholder="Deigite aqui o nome do pet que você quer adotar e, se quiser, algum comentário adicional."
+            ></textarea>
+          </div>
+          <input type="submit" value="Enviar" id="enviar" />
+        </form>
+      </section>
+      <!--section_form-->
+      <footer class="footer">
+        <h6>Moisés Barbosa &copy; Vida Com Patas - 2023</h6>
+      </footer>
       <!--footer-->
     </main>
   </body>
