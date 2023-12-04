@@ -3,34 +3,29 @@ body {
   display: grid;
   grid-template-areas:
     "header"
-    "section_sobre"
+    "section_somos"
+    "section_fazemos"
     "section_adote"
-    "section_doe"
     "footer";
 }
-/* main > header,
-.section_sobre,
-.section_adote,
-.section_doe,
-footer {
-} */
+
 .header {
   grid-area: header;
   background-color: blueviolet;
   height: 10vh;
 }
-.section_sobre {
-  grid-area: section_sobre;
+.section_somos {
+  grid-area: section_somos;
   background-color: rgb(71, 26, 114);
+  height: 40vh;
+}
+.section_fazemos {
+  grid-area: section_fazemos;
+  background-color: rgb(133, 95, 168);
   height: 40vh;
 }
 .section_adote {
   grid-area: section_adote;
-  background-color: rgb(133, 95, 168);
-  height: 40vh;
-}
-.section_doe {
-  grid-area: section_doe;
   background-color: rgb(76, 43, 226);
   height: 40vh;
 }
