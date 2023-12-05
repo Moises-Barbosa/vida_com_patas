@@ -1,3 +1,41 @@
+:root {
+  --cor-amarelo: rgb(245, 245, 219, 0.95);
+  --cor-verde: rgb(144, 196, 109, 0.95);
+  --cor-azul: rgb(135, 206, 250, 0.95);
+  --cor-cinza: rgb(220, 220, 220, 0.95);
+  --cor-rosa: rgb(255, 182, 193, 0.95);
+  --cor-preto: #000;
+  --cor-branco: #fff;
+}
+
+h2 {
+  font-family: "Petrona", serif;
+  font-weight: 800;
+  font-size: 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+h3 {
+  font-family: "Petrona", serif;
+  font-weight: 600;
+  font-size: 45px;
+}
+
+h4 {
+  font-family: "Petrona", serif;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+p {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 600;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
 main {
   background-image: url("img/img_de_fundo.jpg");
   display: grid;
@@ -8,66 +46,75 @@ main {
     "section_adote"
     "section_form"
     "footer";
-  font-family: "Comfortaa", sans-serif;
-  font-weight: 400;
+}
+.header {
+  grid-area: header;
+}
+.section_somos {
+  grid-area: section_somos;
+}
+.section_fazemos {
+  grid-area: section_fazemos;
+}
+.section_adote {
+  grid-area: section_adote;
+}
+.footer {
+  grid-area: footer;
 }
 
 .header {
-  grid-area: header;
-  background-color: rgb(245, 245, 219, 0.95);
-  height: 10vh;
+  background-color: var(--cor-amarelo);
+  height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
 
 header figure img {
-  width: 15vw;
-  min-width: 150px;
+  width: 250px;
+  padding: 15px;
+}
+
+header ul,
+header form {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 header ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: nowrap;
   gap: 1.5vw;
-  width: 50vw;
-  min-width: 250px;
-  font-size: 20px;
-  font-family: "Petrona", serif;
-  font-weight: 600;
+  width: 500px;
 }
 
-a {
+header ul a {
   text-decoration: none;
-  color: #000;
+  color: var(--cor-preto);
   border-bottom: none none none;
   border-radius: 3vw;
-  padding: 0.7vw 1vw 0.7vw 1vw;
+  padding: 10px 25px;
   transition: 1s;
 }
 
-a:hover {
+header ul a:hover {
   cursor: pointer;
   transition: 1s;
-  color: #fff;
-  background-color: #000;
-  border: 1px solid #000;
-  border-radius: 3vw;
+  color: var(--cor-branco);
+  background-color: var(--cor-preto);
+  border: 1px solid var(--cor-preto);
+  border-radius: 25px;
   font-size: 23px;
 }
 
 header form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: solid 1px;
   border-radius: 3vw;
   padding: 0.5vw 1vw 0.5vw 1vw;
-  width: 20vw;
-  min-width: 200px;
+  margin: 15px;
+  width: 250px;
 }
 
 header form img {
@@ -84,61 +131,52 @@ header input {
 }
 
 .section_somos {
-  grid-area: section_somos;
-  height: 70vh;
+  height: 430px;
+  background-color: var(--cor-verde);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
 }
-.section_somos section {
-  display: grid;
-  grid-template-areas:
-    "somos_texto logo"
-    "bnt logo";
-  justify-content: center;
-  align-content: center;
-  background-color: rgb(144, 196, 109, 0.95);
+
+.section_somos div {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .somos_texto {
   margin-left: 2vw;
-  grid-area: somos_texto;
-  width: 45vw;
+  width: 600px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
 }
+
 .somos_texto h3 {
-  font-family: "Petrona", serif;
-  font-weight: 600;
-  font-size: 45px;
+  padding: 15px 0;
 }
 
 .somos_texto h4 {
-  font-family: "Petrona", serif;
-  font-weight: 400;
-  font-size: 35px;
-  margin-bottom: 15px;
+  padding-bottom: 15px;
 }
 
 .somos_texto p {
-  font-weight: 400;
-  font-size: 20px;
-  text-align: justify;
-
-  line-height: 1.2;
+  padding-bottom: 15px;
 }
 
-.bnt {
-  grid-area: bnt;
-  width: 45vw;
-  height: 7vh;
+.somos_texto nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .bnt ul {
-  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: end;
 }
 
 .bnt ul li {
@@ -147,7 +185,6 @@ header input {
   border-radius: 15px;
   border: 1px solid #000;
   background-color: rgb(245, 245, 219);
-  font-size: 18px;
   transition: 1s;
 }
 
@@ -159,56 +196,36 @@ header input {
 }
 
 .logo {
-  grid-area: logo;
-  width: 45vw;
   display: flex;
   justify-content: center;
+  padding: 15px;
+  width: 450px;
 }
 .logo img {
-  width: 400px;
-  min-width: 25vw;
+  width: 95%;
 }
 .section_fazemos {
-  grid-area: section_fazemos;
-  background-color: rgb(135, 206, 250, 0.95);
+  background-color: var(--cor-azul);
+  height: 950px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.section_fazemos div,
+.section_fazemos section figure {
+  display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 300;
-  font-size: 18px;
-  height: 100%;
-  line-height: 1.2;
-  padding-bottom: 15px;
 }
+
 .section_fazemos section {
-  border: 2px solid #000;
+  border: 2px solid var(--cor-preto);
   border-radius: 15px;
   padding: 15px;
-  width: 20vw;
-}
-
-.section_fazemos h4 {
-  font-family: "Petrona", serif;
-  font-size: 30px;
-  font-weight: 400;
-  padding: 5px 0 5px;
-}
-
-.resgate,
-.cuidados,
-.reabilitacao,
-.adocao {
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
-}
-
-.fazemo {
-  font-family: "Petrona", serif;
-  font-weight: 600;
-  font-size: 45px;
-  margin-bottom: 15px;
+  width: 350px;
+  margin: 0px 10px 15px 10px;
 }
 
 .section_fazemos div {
@@ -217,80 +234,53 @@ header input {
   gap: 10px;
 }
 
-.section_fazemos section figure {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .section_fazemos section figure img {
   height: 200px;
-}
-
-.section_adote {
-  grid-area: section_adote;
-  background-color: rgb(220, 220, 220, 0.95);
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 15px 0 15px 0;
-  text-align: center;
-  padding-bottom: 15px;
-}
-
-.section_adote header {
-  margin: 15px 0 15px;
-}
-
-.section_adote header h3 {
-  font-family: "Petrona", serif;
-  font-weight: 600;
-  font-size: 45px;
   padding-bottom: 10px;
 }
 
-.section_adote header p {
-  font-size: 20px;
+.section_fazemos h4 {
+  text-align: center;
+  padding-bottom: 7px;
+}
+
+.section_adote {
+  background-color: var(--cor-cinza);
+  height: 630px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 15px 15px 15px;
+  gap: 15px;
 }
 
 .section_adote div {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   gap: 15px;
 }
 
 .section_adote div section {
-  border: 1px solid #000;
+  border: 1px solid var(--cor-preto);
   padding: 15px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 7px;
 }
 
 .section_adote div figure img {
-  height: 150px;
-}
-
-h5 {
-  font-family: "Petrona", serif;
-  font-size: 25px;
-  font-weight: 400;
-  padding: 5px 0 5px;
-  padding-top: 15px;
-}
-
-.section_adote {
-  margin-bottom: 0;
+  height: 170px;
 }
 
 .section_form {
-  grid-area: section_form;
-  background-color: rgb(255, 182, 193, 0.95);
+  background-color: var(--cor-rosa);
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -300,13 +290,6 @@ h5 {
   text-align: center;
   margin: 15px 0 15px 0;
   font-size: 20px;
-}
-
-.section_form header h3 {
-  font-family: "Petrona", serif;
-  font-size: 45px;
-  font-weight: 600;
-  margin-bottom: 10px;
 }
 
 .section_form form {
@@ -327,7 +310,7 @@ h5 {
 
 .nome input {
   width: 28vw;
-  border: 1px solid #000;
+  border: 1px solid var(--cor-preto);
   border-radius: 5px;
   padding: 5px;
   margin-top: 5px;
@@ -340,7 +323,7 @@ h5 {
 
 .email input {
   width: 28vw;
-  border: 1px solid #000;
+  border: 1px solid var(--cor-preto);
   border-radius: 5px;
   padding: 5px;
   margin-top: 5px;
@@ -353,7 +336,7 @@ h5 {
 
 .textarea textarea {
   width: 60vw;
-  border: 1px solid #000;
+  border: 1px solid var(--cor-preto);
   border-radius: 5px;
   padding: 5px;
   margin-top: 5px;
@@ -362,10 +345,9 @@ h5 {
 #enviar {
   grid-area: enviar;
   width: 60vw;
-
   padding: 5px;
   border-radius: 15px;
-  border: 1px solid #000;
+  border: 1px solid var(--cor-preto);
   background-color: rgb(245, 245, 219);
   font-size: 15px;
   transition: 1s;
@@ -374,17 +356,79 @@ h5 {
 #enviar:hover {
   cursor: pointer;
   transition: 1s;
-  background-color: #000;
+  background-color: var(--cor-preto);
   color: rgb(245, 245, 219);
   font-size: 18px;
 }
 
 .footer {
-  grid-area: footer;
-  background-color: rgb(245, 245, 219, 0.95);
+  background-color: var(--cor-amarelo);
   height: 10vh;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1117px) {
+  .section_somos {
+    height: 800px;
+  }
+  .section_somos div {
+    height: auto;
+  }
+}
+
+@media (max-width: 1085px) {
+  .header {
+    height: 130px;
+    align-content: center;
+  }
+}
+
+@media (max-width: 910px) {
+  .section_adote {
+    height: 900px;
+  }
+}
+
+@media (max-width: 817px) {
+  .section_fazemos {
+    height: 1800px;
+  }
+}
+
+@media (max-width: 779px) {
+  .header {
+    height: 160px;
+    align-content: center;
+  }
+}
+
+@media (max-width: 638px) {
+  .section_adote {
+    height: 1180px;
+  }
+}
+
+@media (max-width: 562px) {
+  .section_adote {
+    height: 1440px;
+  }
+}
+
+@media (max-width: 535px) {
+  .section_adote {
+    height: 1730px;
+  }
+}
+
+@media (max-width: 510px) {
+  .header {
+    height: 250px;
+    align-content: center;
+  }
+  header ul {
+    width: 100vw;
+    flex-flow: column wrap;
+  }
 }
