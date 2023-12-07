@@ -1,39 +1,45 @@
 :root {
-  --cor-amarelo: rgb(245, 245, 219, 0.95);
-  --cor-verde: rgb(144, 196, 109, 0.95);
-  --cor-azul: rgb(135, 206, 250, 0.95);
-  --cor-cinza: rgb(220, 220, 220, 0.95);
-  --cor-rosa: rgb(255, 182, 193, 0.95);
-  --cor-preto: #000;
-  --cor-branco: #fff;
+  --fundo-amarelo: rgb(245, 245, 219, 0.95);
+  --fundo-verde: rgb(144, 196, 109, 0.95);
+  --fundo-azul: rgb(135, 206, 250, 0.95);
+  --fundo-cinza: rgb(220, 220, 220, 0.95);
+  --fundo-rosa: rgb(255, 182, 193, 0.95);
+  --fundo-preto: #000;
+  --fundo-branco: #fff;
+  --borda-padrao: 1px solid #000;
+}
+
+h2,
+h3,
+h4 {
+  font-family: "Petrona", serif;
+  text-align: center;
+  margin: auto;
 }
 
 h2 {
-  font-family: "Petrona", serif;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   white-space: nowrap;
 }
 
 h3 {
-  font-family: "Petrona", serif;
   font-weight: 600;
-  font-size: 45px;
+  font-size: 35px;
 }
 
 h4 {
-  font-family: "Petrona", serif;
   font-weight: 400;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 p {
   font-family: "Comfortaa", sans-serif;
   font-weight: 600;
   text-align: justify;
-  line-height: 1.5;
-  font-size: 20px;
+  line-height: 1.3;
+  font-size: 13px;
 }
 
 main {
@@ -47,6 +53,7 @@ main {
     "section_form"
     "footer";
 }
+
 .header {
   grid-area: header;
 }
@@ -64,12 +71,31 @@ main {
 }
 
 .header {
-  background-color: var(--cor-amarelo);
-  height: 100px;
+  background-color: var(--fundo-amarelo);
+  display: grid;
+  grid-template-areas:
+    "logo"
+    "nav"
+    "pesquisa";
+}
+
+header figure {
+  grid-area: logo;
+}
+header nav {
+  grid-area: nav;
+}
+header form {
+  grid-area: pesquisa;
+}
+
+header figure,
+header nav,
+header form {
   display: flex;
-  justify-content: space-evenly;
+  flex-flow: column;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 header figure img {
@@ -77,22 +103,17 @@ header figure img {
   padding: 15px;
 }
 
-header ul,
-header form {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
 header ul {
-  gap: 1.5vw;
-  width: 500px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  gap: 15px;
+  width: 250px;
 }
 
 header ul a {
   text-decoration: none;
-  color: var(--cor-preto);
+  color: var(--fundo-preto);
   border-bottom: none none none;
   border-radius: 3vw;
   padding: 10px 25px;
@@ -102,18 +123,20 @@ header ul a {
 header ul a:hover {
   cursor: pointer;
   transition: 1s;
-  color: var(--cor-branco);
-  background-color: var(--cor-preto);
-  border: 1px solid var(--cor-preto);
+  color: var(--fundo-branco);
+  background-color: var(--fundo-preto);
+  border: 1px solid var(--fundo-preto);
   border-radius: 25px;
-  font-size: 23px;
+  font-size: 18px;
 }
 
 header form {
+  display: flex;
+  flex-flow: row nowrap;
   border: solid 1px;
   border-radius: 3vw;
-  padding: 0.5vw 1vw 0.5vw 1vw;
-  margin: 15px;
+  padding: 5px 10px;
+  margin: 15px auto 15px auto;
   width: 250px;
 }
 
@@ -124,59 +147,50 @@ header form img {
 
 header input {
   border: none;
-  border-radius: 3vw;
-  padding-left: 1vw;
+  border-radius: 15px;
+  padding-left: 5px;
   background-color: transparent;
+  height: 15px;
   width: 100%;
 }
 
 .section_somos {
-  height: 430px;
-  background-color: var(--cor-verde);
+  background-color: var(--fundo-verde);
+  display: grid;
+  grid-template-areas:
+    "header"
+    "logo";
+  padding: 10px;
+}
+
+.section_somos header,
+.section_somos figure {
+  margin: auto;
+}
+
+.section_somos header {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 15px;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: space-evenly;
+  gap: 10px;
 }
 
-.section_somos div {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+.section_somos header p {
+  width: 95%;
+  margin: auto;
 }
 
-.somos_texto {
-  margin-left: 2vw;
-  width: 600px;
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.somos_texto h3 {
-  padding: 15px 0;
-}
-
-.somos_texto h4 {
-  padding-bottom: 15px;
-}
-
-.somos_texto p {
-  padding-bottom: 15px;
-}
-
-.somos_texto nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.bnt {
+  width: 100%;
 }
 
 .bnt ul {
-  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-flow: row;
+  margin-top: 5px;
+  justify-content: space-between;
 }
 
 .bnt ul li {
@@ -198,62 +212,80 @@ header input {
 .logo {
   display: flex;
   justify-content: center;
-  padding: 15px;
-  width: 450px;
+  padding-top: 25px;
+  width: 250px;
 }
+
 .logo img {
   width: 95%;
 }
+
 .section_fazemos {
-  background-color: var(--cor-azul);
-  height: 950px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  background-color: var(--fundo-azul);
+  display: grid;
+  grid-template-areas:
+    "header"
+    "container";
+  padding: 15px;
 }
 
+.section_fazemos header {
+  grid-area: header;
+}
+.section_fazemos .container {
+  grid-area: container;
+}
+
+.section_fazemos header,
 .section_fazemos div,
-.section_fazemos section figure {
+.section_fazemos section {
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
-}
-
-.section_fazemos section {
-  border: 2px solid var(--cor-preto);
-  border-radius: 15px;
-  padding: 15px;
-  width: 350px;
-  margin: 0px 10px 15px 10px;
 }
 
 .section_fazemos div {
-  display: flex;
   flex-flow: row wrap;
-  gap: 10px;
+  gap: 15px;
+}
+
+.section_fazemos section {
+  border: 2px solid var(--fundo-preto);
+  border-radius: 15px;
+  padding: 15px;
+  width: 250px;
+  height: 250px;
+  margin: 15px 10px;
 }
 
 .section_fazemos section figure img {
-  height: 200px;
+  height: 150px;
   padding-bottom: 10px;
 }
 
-.section_fazemos h4 {
-  text-align: center;
-  padding-bottom: 7px;
+.section_adote {
+  background-color: var(--fundo-cinza);
+  display: grid;
+  grid-template-areas:
+    "header"
+    "adote";
+  padding: 15px;
 }
 
-.section_adote {
-  background-color: var(--cor-cinza);
-  height: 630px;
+.section_adote header {
+  grid-area: header;
+}
+.section_adote div {
+  grid-area: adote;
+}
+
+.section_adote header,
+.section_adote div section {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
+  flex-flow: column;
   align-items: center;
-  text-align: center;
-  padding: 0 15px 15px 15px;
-  gap: 15px;
+  gap: 5px;
 }
 
 .section_adote div {
@@ -262,25 +294,23 @@ header input {
   justify-content: space-evenly;
   align-items: center;
   gap: 15px;
+  padding: 15px 15px 0 15px;
 }
 
 .section_adote div section {
-  border: 1px solid var(--cor-preto);
+  border: 2px solid var(--fundo-preto);
   padding: 15px;
   border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 7px;
+  gap: 8px;
 }
 
 .section_adote div figure img {
   height: 170px;
+  max-width: 220px;
 }
 
 .section_form {
-  background-color: var(--cor-rosa);
+  background-color: var(--fundo-rosa);
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -288,7 +318,7 @@ header input {
 }
 .section_form header {
   text-align: center;
-  margin: 15px 0 15px 0;
+  margin: 15px 0;
   font-size: 20px;
 }
 
@@ -310,7 +340,7 @@ header input {
 
 .nome input {
   width: 28vw;
-  border: 1px solid var(--cor-preto);
+  border: 1px solid var(--fundo-preto);
   border-radius: 5px;
   padding: 5px;
   margin-top: 5px;
@@ -323,7 +353,7 @@ header input {
 
 .email input {
   width: 28vw;
-  border: 1px solid var(--cor-preto);
+  border: 1px solid var(--fundo-preto);
   border-radius: 5px;
   padding: 5px;
   margin-top: 5px;
@@ -336,7 +366,7 @@ header input {
 
 .textarea textarea {
   width: 60vw;
-  border: 1px solid var(--cor-preto);
+  border: 1px solid var(--fundo-preto);
   border-radius: 5px;
   padding: 5px;
   margin-top: 5px;
@@ -347,7 +377,7 @@ header input {
   width: 60vw;
   padding: 5px;
   border-radius: 15px;
-  border: 1px solid var(--cor-preto);
+  border: 1px solid var(--fundo-preto);
   background-color: rgb(245, 245, 219);
   font-size: 15px;
   transition: 1s;
@@ -356,79 +386,94 @@ header input {
 #enviar:hover {
   cursor: pointer;
   transition: 1s;
-  background-color: var(--cor-preto);
+  background-color: var(--fundo-preto);
   color: rgb(245, 245, 219);
   font-size: 18px;
 }
 
 .footer {
-  background-color: var(--cor-amarelo);
+  background-color: var(--fundo-amarelo);
   height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@media (max-width: 1117px) {
-  .section_somos {
-    height: 800px;
-  }
-  .section_somos div {
-    height: auto;
-  }
-}
-
-@media (max-width: 1085px) {
-  .header {
-    height: 130px;
-    align-content: center;
-  }
-}
-
-@media (max-width: 910px) {
-  .section_adote {
-    height: 900px;
-  }
-}
-
-@media (max-width: 817px) {
-  .section_fazemos {
-    height: 1800px;
-  }
-}
-
-@media (max-width: 779px) {
-  .header {
-    height: 160px;
-    align-content: center;
-  }
-}
-
-@media (max-width: 638px) {
-  .section_adote {
-    height: 1180px;
-  }
-}
-
-@media (max-width: 562px) {
-  .section_adote {
-    height: 1440px;
-  }
-}
-
-@media (max-width: 535px) {
-  .section_adote {
-    height: 1730px;
-  }
-}
-
-@media (max-width: 510px) {
-  .header {
-    height: 250px;
-    align-content: center;
-  }
+@media (min-width: 425px) {
   header ul {
-    width: 100vw;
-    flex-flow: column wrap;
+    flex-flow: row;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 800px) {
+  .header {
+    grid-template-areas:
+      "logo pesquisa"
+      "nav nav";
+  }
+  .section_somos {
+    grid-template-areas: "header logo";
+  }
+
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+  }
+
+  .section_somos header p {
+    width: 500px;
+  }
+
+  .logo {
+    width: 250px;
+  }
+
+  .logo img {
+    width: 100%;
+  }
+}
+@media (min-width: 1000px) {
+  .header {
+    grid-template-areas: "logo nav pesquisa";
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1440px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 45px;
+  }
+
+  h4 {
+    font-size: 35px;
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: 20px;
+  }
+  .section_somos header p {
+    width: 700px;
+  }
+  .logo {
+    width: 400px;
+  }
+
+  .logo img {
+    width: 100%;
+  }
+  .section_fazemos section {
+    height: 400px;
+    width: 350px;
+    justify-content: space-evenly;
+  }
+  .section_fazemos section figure img {
+    padding-bottom: 0;
   }
 }
